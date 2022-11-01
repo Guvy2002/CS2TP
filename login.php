@@ -12,7 +12,7 @@ if (isset($_POST['submitted'])) {
         echo "<p style='color:red;position:relative;top:110px;'>Password required! </p>";
     } else {
         try {
-            $stat = $db->prepare("SELECT PasswordHash FROM stancelogins WHERE EmailAddress = ?");
+            $stat = $db->prepare("SELECT PasswordHash FROM logins WHERE Email = ?");
             $stat->execute(array($email));
             if ($stat && $stat->rowCount() > 0) {
                 $row = $stat->fetch();
@@ -33,6 +33,7 @@ if (isset($_POST['submitted'])) {
         }
     }
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -64,7 +65,7 @@ if (isset($_POST['submitted'])) {
         <input type="submit" value="Register now!">
     </form>
     <a href="reset-password.php">Forgot your password?</a>
-
+    
 </body>
 
 </html>

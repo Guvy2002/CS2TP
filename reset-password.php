@@ -4,7 +4,7 @@ if (isset($_POST["submitted"])) {
     require_once("connectdb.php");
     // $name = empty($_POST["name"]) ? false : htmlspecialchars($_POST["name"]);
     $email = empty($_POST["email"]) ? false : htmlspecialchars($_POST["email"]);
-    $recoverykey = empty($_POST["recoverykey"]) ? false : password_hash($_POST["recoverykey"], PASSWORD_DEFAULT);
+    $recoverykey = empty($_POST["recoverykey"]) ? false : $_POST["recoverykey"];
     $password = empty($_POST["password"]) ? false : password_hash($_POST["password"], PASSWORD_DEFAULT);
 
     if (!($email)) {
@@ -16,17 +16,26 @@ if (isset($_POST["submitted"])) {
     } elseif ($_POST["password"] != $_POST["confirmpassword"]) {
         echo "<p style='color:red'> Passwords do not match </p>";
     } else {
+        try {
+            
+            // Find email, check rhash is equal, update phash with new, regen rkey
+            $stat = $db->prepare("SELECT * FROM logins WHERE Email=?");
+            $stat->execute([$email]); 
+            $user = $stat->fetch();
+
+            if (password_verify($recoverykey, $user['RecoveryHash'])) {
+                $stat = $db->prepare("UPDATE logins SET PasswordHash=? WHERE uid=?");
+                $stat->execute([$password, $user['uid']]); 
+                echo "Updated password";
+            }
+            else {
+                echo "Incorrect Recovery Key";
+            }
+        } catch (PDOException $ex) {
+            echo "Sorry, a database error occurred! <br>";
+            echo "Error details: <em>" . $ex->getMessage() . "</em>";
+        }
         exit;
-        // try {
-
-        //     $stat = $db->prepare("insert into stancelogins values(default,?,?)");
-        //     $stat->execute(array($_POST["email"], $password));
-
-        //     echo "Congratulations! your Stance account has been registered.";
-        // } catch (PDOException $ex) {
-        //     echo "Sorry, a database error occurred! <br>";
-        //     echo "Error details: <em>" . $ex->getMessage() . "</em>";
-        // }
     }
 }
 ?>

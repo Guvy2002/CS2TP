@@ -16,10 +16,12 @@ if (isset($_POST["submitted"])) {
         echo "<p style='color:red'> Passwords do not match </p>";
     } else {
         try {
-
-            $recoverykey = password_hash("ABCDE", PASSWORD_DEFAULT);
-            $stat = $db->prepare("insert into stancelogins values(default,?,?,?)");
+            $rgen = GenRecoveryKey();
+            $recoverykey = password_hash($rgen, PASSWORD_DEFAULT);
+            $stat = $db->prepare("insert into logins values(default,?,?,?)");
             $stat->execute(array($_POST["email"], $password, $recoverykey));
+
+            echo "Recovery Key " . $rgen . "\n";
 
             echo "Congratulations! your Stance account has been registered.";
         } catch (PDOException $ex) {
@@ -28,6 +30,19 @@ if (isset($_POST["submitted"])) {
         }
     }
 }
+
+function GenRecoveryKey()
+{
+    $set = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";      // Character set to pick from
+    $len = strlen($set);
+    $rkey = "R";
+    
+    for ($i = 0; $i < 5; $i++)                          // Predefined length 5
+        $rkey .= $set[rand(0, $len - 1)];               // .= operator appends string
+
+    return $rkey;
+}
+
 ?>
 <!DOCTYPE html>
 <html>
