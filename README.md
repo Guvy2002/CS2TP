@@ -5,3 +5,6 @@
 
 needed before running <br>
 https://nodejs.org/en/download/
+
+First time setup <br>
+`php artisan migrate`
