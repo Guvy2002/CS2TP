@@ -1,7 +1,10 @@
 <?php
 require_once("connectdb.php");
 session_start();
-
+if (!isset($_SESSION['email'])) {
+    header('Location:login.php');
+    exit();
+}
 if (isset($_POST['add-to-cart'])) {
     try {
         // echo "id is set";
