@@ -7,6 +7,7 @@ https://nodejs.org/en/download/
 uncomment `extension=pdo_mysql` in `php.ini` 
 
 ## First time setup
+run xampp apache & mysql <br>
 in the project directory run, <br>
 `php artisan migrate` *<- this should ask you to create a new database* <br>
 `npm install`
