@@ -8,3 +8,19 @@ https://nodejs.org/en/download/
 
 First time setup <br>
 `php artisan migrate`
+
+Main files <br>
+```
+STANCE  
+├── app  
+│   └── Http
+│       ├── Controllers
+│       │   └── AuthController.php  
+│       └── Middlware
+│           └── AuthCheck.php
+├── resources
+│   └── views
+│       └── *.php
+└── routes
+    └── web.php
+```
