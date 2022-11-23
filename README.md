@@ -3,6 +3,8 @@
 `php artisan serve` <br>
 `npm run dev`
 
+xampp apache & mysql
+
 needed before running <br>
 https://nodejs.org/en/download/
 
