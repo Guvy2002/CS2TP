@@ -9,7 +9,7 @@ uncomment `extension=pdo_mysql` in `php.ini`
 ## First time setup
 run xampp apache & mysql <br>
 in the project directory run, <br>
-`php artisan migrate` *<- this should ask you to create a new database* <br>
+`php artisan migrate:fresh --seed` *<- this should ask you to create a new database* <br>
 `npm install`
 
 ## To run
@@ -25,7 +25,8 @@ STANCE
 ├── app  
 │   └── Http
 │       ├── Controllers
-│       │   └── AuthController.php  
+│       │   └── AuthController.php
+│       │   └── ProductController.php
 │       └── Middlware
 │           └── AuthCheck.php
 ├── resources
