@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,8 @@ Route::post('/login-user', [AuthController::class, 'loginUser'])->name('login-us
 
 Route::get('/home', [AuthController::class, 'home'])->middleware('isLoggedIn');
 Route::get('/logout', [AuthController::class, 'logout']);
+
+Route::get('/manage', [ProductController::class, 'manage'])->middleware('isLoggedIn'); // middlware should be isAdmin
+Route::post('/add-product', [ProductController::class, 'addProduct'])->name('add-product'); // middlware should be isAdmin
+
+Route::get('/products', [ProductController::class, 'viewAllProducts']);

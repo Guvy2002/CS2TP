@@ -21,6 +21,7 @@
                     @if ($data->group > 0)
                         <a href="{{url('manage')}}">Manage Products</a><br>
                     @endif
+                    <a href="{{url('products')}}">Products</a><br>
                     <a href="{{url('logout')}}">Logout</a>
                 </td>
             </tr>
