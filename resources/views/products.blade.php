@@ -25,12 +25,20 @@
             <td>{{$product->size}}</td>
             <td>{{$product->gender}}</td>
             <td>{{$product->imgPath}}</td>
-            <td><button type="submit">Add to cart</button></td>
+            <form action="{{route('add-to-basket')}}" method="post">
+              @csrf
+              <input type='hidden' name='hidden_id' value="{{$product->id}}"/>
+              <input type='hidden' name='hidden_name' value="{{$product->name}}"/>
+              <input type='hidden' name='hidden_price' value="{{$product->price}}"/>
+              <td><input type="submit" value="Add to cart"></td>
+            </form>
             </tr>
         @empty
             <td>No products</td>  
         @endforelse
     </tbody>
 </table>
+
+
 
 @endsection

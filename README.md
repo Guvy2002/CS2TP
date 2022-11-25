@@ -17,9 +17,7 @@ in the project directory run, <br>
 `npm run dev` <br>
 run xampp apache & mysql
 
-Everything should work hopefully now <br>
-`admin@admin:admin`
-
+Everything should work hopefully now
 
 Main files <br>
 ```

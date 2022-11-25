@@ -32,9 +32,10 @@ class AuthController extends Controller
         if (Hash::check($request->password, $user->passwordHash)) 
         { 
             $request->session()->put('loginId', $user->id); 
+  
             return redirect('home');
         }
-        //else return back()->with('fail', 'Account details incorrect');
+        else return back()->with('fail', 'Account details incorrect');
 
     }
 
@@ -73,7 +74,8 @@ class AuthController extends Controller
 
     public function logout() {
         if(Session::has('loginId')) {
-            Session::pull('loginId');
+            Session::pull('loginId'); //unset logged in account
+            Session::pull('cart'); //clear basket session
         }
         return redirect('login');
     }
