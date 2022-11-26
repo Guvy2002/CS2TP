@@ -5,9 +5,9 @@
 @section('content')
 
 @forelse ( $data as $product )
-    {{$product['name']}}
+{{$product['name']}}<br>
 @empty
-    empty
+empty
 @endforelse
 
 @endsection
