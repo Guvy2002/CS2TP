@@ -35,4 +35,6 @@ Route::post('/add-product', [ProductController::class, 'addProduct'])->name('add
 Route::get('/products', [ProductController::class, 'viewAllProducts']);
 
 Route::get('/basket', [BasketController::class, 'viewBasket'])->name('basket')->middleware('isLoggedIn');
-Route::post('/add-to-basket', [BasketController::class, 'addToBasket'])->name('add-to-basket');//->middleware('is');
+Route::post('/add-to-basket', [BasketController::class, 'addToBasket'])->name('add-to-basket'); //->middleware('is');
+Route::get('/remove-from-basket/{id}', [BasketController::class, 'removeFromBasket'])->name('remove-from-basket'); //->middleware('is');
+Route::get('/update-basket-quantity/{operation}/{id}', [BasketController::class, 'updateQuantity'])->name('updateQuantity');//->middleware('is');
