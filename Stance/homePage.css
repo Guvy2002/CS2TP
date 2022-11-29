@@ -1,0 +1,263 @@
+
+/* slideshow img and boxes*/
+
+.row{
+    padding-left: 10%;
+    padding-top: 15%;
+    display: flex;
+    font-family: sans-serif;
+    font-size: 25px;
+
+}
+.col-1{
+    flex-basis:40%;
+    top:-100px;
+}
+
+.col-1 h2{
+    font-size: 52px;
+    padding-top: -150px;
+}
+.col-1 h3{
+    font-size: 30px;
+    font-weight:100;
+
+}
+.col-1 p {
+  font-size: 16px;  
+  color:#949494;
+  margin-top: 10px;
+  font-weight:100;
+}
+.col-1 h4{
+    margin:10px 0;
+    font-size: 20px;
+}
+
+button{
+    width: 140px;
+    border: 0;
+    padding: 12px 10px;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(to right, #ff3527, #3a3939);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: width 0.5s;
+}
+
+button img{
+    width: 30px;
+    display:none;
+}
+button:hover img{
+    display:block;
+}
+button:hover{
+    width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.col-2{
+    position: relative;
+    flex-basis:60%;
+    display: flex;
+    align-items:center;
+    top:-100px;
+}
+.shoe1{
+    width: 100%;
+    padding-top:-40%;
+}
+
+/* about us section*/
+#about-us{
+    padding-top: 10%;
+    width:100%;
+    padding-left: 2%;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+.about-us h3{
+    font-weight:100;
+}
+
+
+/*Best seller section */
+.best-sellers h2{
+    padding-top: 2%;
+    padding-left: 50px;
+    font-family: sans-serif;
+    font-size: 30px;
+
+}
+
+
+.best-seller-1{
+    width:40%;
+    padding-left: 10%;
+    margin-left: -100px;
+    text-align: justify;
+
+}
+
+.best-seller-2{
+    width:40%;
+    padding-left:10%;
+    margin-left: -130px;
+    text-align: justify;
+
+}
+
+.best-seller-3{
+    width:40%;
+    padding-left:10%;
+    margin-left: -130px;
+    text-align: justify;
+} 
+
+.best-sellers h3{
+    font-weight:100%;
+    padding-left: 60px;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
+.best-sellers h4{
+    font-weight:100%;
+    padding-left: 65px;
+    font-family: sans-serif;
+    font-size: 20px;
+    color:#949494;
+}
+
+
+/*Footer stuff*/
+#footer{
+    padding-top:10px;
+    padding-left:2%;
+    width:100%;
+    color:rgb(4, 4, 4);
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
+.footer h3{
+    font-weight:100;
+   
+} 
+
+.instagram-icon{
+    width:7%;
+    position:absolute;
+    right:0;
+ 
+}
+
+.twitter-icon{
+    width:7%;
+    position:absolute;
+    right:130px;
+ 
+}
+
+.facebook-icon{
+    width:7%;
+    position: absolute;
+    right:250px;
+}
+
+/*shop by category box*/
+.shop-by-category{
+    font-weight:100%;
+    padding-top: 30px;
+    padding-left: 60px;
+    font-family: sans-serif;
+    font-size: 30px;
+}
+
+
+
+/*-----------------------Slideshow------------------------->*/
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 60%;
+  position: static;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: sticky;
+  top: 50%;
+  width: 5%;
+  padding: 16px;
+  margin-top: -22px;
+  color: rgb(155, 54, 54);
+  font-weight: bold;
+  font-size: 70px;
+  transition: 0.2s ease;
+  border-radius:  100px 100px ;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px} }
+ 
+
