@@ -22,6 +22,7 @@
                         <a href="{{url('manage')}}">Manage Products</a><br>
                     @endif
                     <a href="{{url('products')}}">Products</a><br>
+                    <a href="{{url('orders')}}">Orders</a><br>
                     <a href="{{url('logout')}}">Logout</a>
                 </td>
             </tr>

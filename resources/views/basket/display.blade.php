@@ -16,7 +16,7 @@
         </tr>
     </thead>
     <tbody>
-        <?php $total = 0; ?>
+        @php($total = 0)
         @forelse($data as $product)
         <tr>
             <td>{{$product['id']}}</td>
@@ -29,7 +29,7 @@
             <td><a href="{{route('updateQuantity',['add',$product['id']])}}"><button>+</button></a></td>
             <td><a href="{{route('updateQuantity',['deduct',$product['id']])}}"><button>-</button></a></td>
         </tr>
-        <?php $total += $product['total']; ?>
+        @php($total += $product['total'])
 
         @empty
         <td>No products</td>
@@ -43,9 +43,27 @@
         <td></td>
         <tr>
             <td colspan='3' align='right'>Total</td>
-            <td align='right'> <?= number_format($total, 2) ?> </td>
+            <td align='middle'> <?= number_format($total, 2) ?> </td>
+            <td>
+                <form action="{{route('checkout-cart')}}" method="post">
+                    @csrf
+                    <input type='hidden' name='hidden_total' value="{{$total}}" />
+                    <button type="submit">Checkout</button>
+                </form>
+            </td>
         </tr>
         @endif
     </tbody>
 </table>
+
+@if(Session::has('success'))
+<div class="alert alert-success">{{Session::get('success')}}</div>
+@endif
+@if(Session::has('fail'))
+<div class="alert alert-danger">{{Session::get('fail')}}</div>
+@endif
+
+<a href="{{url('home')}}"><button>Home</button></a>
+<a href="{{url('products')}}"><button>Products</button></a>
+
 @endsection

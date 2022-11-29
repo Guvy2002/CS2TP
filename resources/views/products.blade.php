@@ -30,7 +30,7 @@
         <input type='hidden' name='hidden_id' value="{{$product->id}}" />
         <input type='hidden' name='hidden_name' value="{{$product->name}}" />
         <input type='hidden' name='hidden_price' value="{{$product->price}}" />
-        <td><input type="submit" value="Add to cart"></td>
+        <td><input type="submit" value="Add to cart" @if($product->stock == 0) disabled='disabled' @endif></td>
       </form>
     </tr>
     @empty
@@ -39,6 +39,7 @@
   </tbody>
 </table>
 
-
+<a href="{{url('home')}}"><button>Home</button></a>
+<a href="{{url('basket')}}"><button>Basket</button></a>
 
 @endsection

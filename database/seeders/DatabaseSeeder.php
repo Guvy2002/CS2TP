@@ -30,5 +30,6 @@ class DatabaseSeeder extends Seeder
             'passwordHash' => Hash::make('admin'),
             'group' => 2
         ]);
+
     }
 }

@@ -80,4 +80,7 @@
     </tbody>
 </table>
 
+<a href="{{url('home')}}"><button>Home</button></a>
+<a href="{{url('products')}}"><button>Products</button></a>
+
 @endsection
