@@ -1,0 +1,246 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-family: "Dosis", sans-serif ;
+}
+
+.navbar{
+    width:300px;
+    height:100%;
+    background-color: #262626;
+    position: fixed;
+    top:0;
+    left:-300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*border-radius:0 20% 20% 0 ;*/
+    transition: left 0.8s cubic-bezier(1,0,0,1);
+}
+
+.change{
+    left:0;
+}
+
+.hamburger-menu{
+    width :35px;
+    height: 30px;
+    position: fixed;
+    top: 100px;  /*50px before*/
+    left: 50px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.line{
+    width:100%;
+    height:3px;
+    background-color:rgb(165, 39, 39);
+    transition: all 0.8s;
+}
+
+.change .line-1{
+   transform: rotateZ(-405deg) translateY(14px); /* translate(-8px,6px);*/
+}
+
+.change .line-2{
+    opacity:0;
+ }
+
+ .change .line-3{
+    transform: rotateZ(405deg) translateY(-14px); /*translate(-8px, -12px);*/
+ }
+
+.nav-list{
+    text-align: left;
+}
+
+.nav-item{
+    list-style: none;
+    margin: 25px;
+}
+
+.nav-link{
+    text-decoration: none;
+    font-size:22px;
+    color:#eee;
+    font-weight:300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    position: relative;
+    padding:3px 0;
+}
+
+.nav-link:before,
+.nav-link:after{
+    content:"";
+    width:100%;
+    height:2px;
+    background-color: rgb(165, 39, 39);
+    position: absolute;
+    left:0;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+.nav-link::after{
+    bottom:0;
+    transform-origin:right;
+}
+
+.nav-link::before{
+    top:0;
+    transform-origin:left;
+}
+
+.nav-link:hover::before,
+.nav-link:hover::after{
+   transform: scaleX(1);
+}
+
+.top{ /*top box*/
+    float:top;
+    width:auto;
+    height:200px;
+    font-size:20px;
+    color:rgb(7, 7, 7);
+    font-weight:300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding:3px 0;
+} 
+
+.left{/*filters*/
+    float:left;
+    width:22%;
+    height:821px;
+   /* background-color: #bbb2b2;*/
+    text-decoration: none;
+    font-size:20px;
+    color:#eee;
+    font-weight:300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding:3px 0;
+}
+
+.right{ /*Images*/
+    float: right;
+    text-decoration: none;
+    
+    width:78%;
+    height:821px;/*521px;*/
+   /* background-color: rgb(198, 198, 197);*/
+    font-size:20px;
+    color:#eee;
+    font-weight:300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding:3px 0;
+}
+
+/*input[type=text]{ search icon with animation
+    float: right;
+    width:130px;
+    border:2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;           
+    background-color: white;
+    background-position: 10px 10px;
+    background-image:url('searchicon.png');
+    background-repeat: no-repeat;
+    padding: 12px 20px 12-x 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width:20%;
+} */
+
+.imagebox{
+    width:25%;
+    height:50%;
+    background-color:white;
+    margin:20px;
+    position: absolute;
+    color:#262626;
+}
+
+#bottom{
+    position:absolute;
+    bottom: 0;
+    font-size: 30px;
+}
+
+.imagebox1{
+    width:25%;
+    height:50%;
+    background-color:rgb(147, 145, 145);
+    margin-left: 27%;
+    margin-top: 20px;
+    position: absolute;
+    color:#262626;
+  
+}
+
+.imagebox2{
+    width:25%;
+    height:50%;
+    background-color:rgb(147, 145, 145);
+    margin-left: 52.6%;
+    margin-top: 20px;
+    position: absolute;
+    color:#262626;
+  
+}
+
+.imagebox3{
+    width:25%;
+    height:50%;
+    background-color:rgb(147, 145, 145);
+    margin:20px;
+    position: absolute;
+    color:#262626;
+    
+}
+
+.imagebox4{
+    width:25%;
+    height:50%;
+    background-color:rgb(147, 145, 145);
+    margin-top:400px;
+    margin-left: 1.255%;
+    position: absolute;
+    color:#262626;
+    
+}
+
+.imagebox5{
+    width:25%;
+    height:50%;
+    background-color:rgb(147, 145, 145);
+    margin-left: 27%;
+    margin-top: 400px;
+    position: absolute;
+    color:#262626;
+  
+}
+
+.imagebox6{
+    width:25%;
+    height:50%;
+    background-color:rgb(147, 145, 145);
+    margin-left: 52.6%;
+    margin-top: 400px;
+    position: absolute;
+    color:#262626;
+  
+}
