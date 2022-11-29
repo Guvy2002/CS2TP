@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>STANCE</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+  border-color: rgb(0, 0, 0);
+  border-radius: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+}
+
+li a {
+  display: block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  float: left;
+}
+
+li b {
+  display: block;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  float: right;
+}
+
+/*SLIDESHOW*/
+.mySlides {display:none;} 
+
+
+.center {
+  display: block;
+  margin-left: right;
+  margin-right: left;
+  width: 50%;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 50%;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: rgb(0, 0, 0);
+  margin-top: 20px;
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>STANCE</h1>
+</div>
+
+
+
+<div class="topnav">
+    <ul>
+        <li><a href="Mens Shoes.html">Mens</a></li>
+        <li><a href="Womens Shoes.html">Womens</a></li>
+        <li><a href="Kids Shoes.html">Kids</a></li>
+        <li><a href="Sales Page.html">Sales</a></li>
+        <li><a href="Acess Page.html">Accesories</a></li>
+        <li><b href="Login.html">Login</b></li>
+        <li><b href="Register.html">Register</b></li>
+        <li><b href="Basket.html">Basket</b></li>
+        <div class="search-container">
+          <form action="/action_page.php">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      </ul>
+</div>
+
+<!-- SLIDESHOW-->
+<h2 class="w3-center">Our Latest Hot Products</h2>
+<div class=".collum" div> 
+<div class="w3-content w3-section" style="max-width:500px">
+
+  <img class="mySlides" src="Shoes/Slideshow/1.jpg" style="width:1000px;height:300px" class="center">
+  <img class="mySlides" src="Shoes/Slideshow/2.jpg" style="width:1000px;height:300px" class="center">
+  <img class="mySlides" src="Shoes/Slideshow/3.jpg" style="width:1000px;height:300px" class="center">
+</div>
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+
+
+
+</script>
+
+
+
+<div class="row">
+  <div class="column">
+    <img src="Shoes/Mens/1/1.1.jpg" alt="Mike" style="width:50%">
+    <h2>Nike Air Force 1 Law Winterised Trainer</h2>
+    <p></p>
+    <p class="title"> £114.99 </p>
+    <p>Available in differant sizes and colours </p>
+    <p><button class="button">View</button></p>
+    <p><button class="button">Add to basket</button></p>
+  </div>
+  
+  <div class="column">
+    <img src="Shoes/Mens/2/2.1.jpg" alt="Mike" style="width:50%">
+    <h2>Vapor Max 2021 Flyknit Trainer</h2>
+    <p></p>
+    <p class="title"> £199.99 </p>
+    <p>Available in differant sizes and colours </p>
+    <p><button class="button">View</button></p>
+    <p><button class="button">Add to basket</button></p>
+  </div>
+  
+  <div class="column">
+    <img src="Shoes/Mens/3/3.1.jpg" alt="Mike" style="width:50%">
+    <h2>Jordan 1 Mid Trainer</h2>
+    <p></p>
+    <p class="title"> £114.99 </p>
+    <p>Available in differant sizes and colours </p>
+    <p><button class="button">View</button></p>
+    <p><button class="button">Add to basket</button></p>
+  </div>
+</div>
+
+
+<div class="row">
+    <div class="column">
+    <img src="Shoes/Mens/4/4.1.jpg" alt="Mike" style="width:50%">
+    <h2>Nike Air Max 270 Trainer</h2>
+    <p></p>
+    <p class="title"> £144.99 </p>
+    <p>Available in differant sizes and colours </p>
+    <p><button class="button">View</button></p>
+    <p><button class="button">Add to basket</button></p>
+    </div>
+    
+  <div class="column">
+      <img src="Shoes/Mens/5/5.1.jpg" alt="Mike" style="width:50%">
+    <h2>Chuck Taylor All Star High Trainer</h2>
+    <p></p>
+    <p class="title"> £54.99 </p>
+    <p>Available in differant sizes and colours </p>
+    <p><button class="button">View</button></p>
+    <p><button class="button">Add to basket</button></p>
+    </div>
+    
+  <div class="column">
+      <img src="Shoes/Kids/6/6.1.jpg" alt="Mike" style="width:50%">
+    <h2>Addidas Original NMD R1 Primeblue Trainer </h2>
+    <p></p>
+    <p class="title"> £144.99 </p>
+    <p>Available in differant sizes and colours </p>
+    <p><button class="button">View</button></p>
+    <p><button class="button">Add to basket</button></p>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <img src="Shoes/Social media/InstagramLogo2.png" alt="Mike" style="width:5%">
+    <img src="Shoes/Social media/TwitterLogo2.png" alt="Mike" style="width:5%">
+
+  </div>
+  
+
+
+</body>
+</html>
